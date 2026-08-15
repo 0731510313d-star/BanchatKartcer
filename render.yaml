@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: banchatkartcer
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --threads 2 --timeout 120
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
